@@ -8,10 +8,11 @@
 .lastNewsTitle h1 {
     text-transform: uppercase;
     font-weight: normal;
+    color: var(--orange);
 }
 
 .lastNewsTitle hr {
-    background-color: #ffa801;
+    background-color: var(--orange);
     height: 4px;
     outline: 0;
     border: 0;
