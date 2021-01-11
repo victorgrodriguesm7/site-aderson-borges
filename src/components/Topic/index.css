@@ -4,6 +4,8 @@
     border-bottom: 1px solid #d2dae2;
     margin: 2vh 0 2vh 1vh;
     min-height: 7vh;
+    color: var(--orange);
+    font-family: "Barlow", sans-serif;
 }
 
 .topic .title {
@@ -15,14 +17,12 @@
 .topic .titleText {
     margin-left: 1%;
     font-weight: normal;
-    color: #333;
     user-select: none;
 }
 .topic .titleMoreIcon {
     margin-left: auto;
     width: 6%;
     height: 45%;
-    color: #333;
     transition: transform 0.2s;
 }
 
@@ -31,7 +31,7 @@
     width: 12px;
     outline: 0;
     border: 0;
-    background: #ffa801;
+    background: var(--orange);
 }
 
 .topic .lastNewsOfTopic {
@@ -84,7 +84,7 @@
 
 .topic.active .lastNews::before  {
   content: "■";
-  color: #ffa801;
+  color: var(orange);
   font-weight: bolder;
   font-size: 32px;
   margin-right: .5em;
