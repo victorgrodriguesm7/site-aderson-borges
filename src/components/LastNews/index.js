@@ -46,7 +46,7 @@ const LastNews = () => {
         });
     }, [])
 
-    if (true)
+    if (loading)
         return getLoadingComponents();
     return (
         <h1>Carregado</h1>
