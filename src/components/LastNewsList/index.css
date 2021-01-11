@@ -1,0 +1,12 @@
+main {
+    height: 100%;
+}
+
+.lastNewsList {
+    margin: 0 1vw 0 1vw;
+    gap: 1vw 1vh;
+    height: 50%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+}
