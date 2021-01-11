@@ -1,0 +1,91 @@
+.topic {
+    display: flex;
+    border-top: 1px solid #d2dae2;
+    border-bottom: 1px solid #d2dae2;
+    margin: 2vh 0 2vh 1vh;
+    min-height: 7vh;
+}
+
+.topic .title {
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.topic .titleText {
+    margin-left: 1%;
+    font-weight: normal;
+    color: #333;
+    user-select: none;
+}
+.topic .titleMoreIcon {
+    margin-left: auto;
+    width: 6%;
+    height: 45%;
+    color: #333;
+    transition: transform 0.2s;
+}
+
+.topic .titleLine {
+    height: 60%;
+    width: 12px;
+    outline: 0;
+    border: 0;
+    background: #ffa801;
+}
+
+.topic .lastNewsOfTopic {
+    display: none;
+}
+
+/* animações */
+
+.topic:hover .titleLine {
+    height: 80%;
+    transition: height 0.3s;
+}
+
+.topic:hover {
+    background-color: #fafffb;
+    transition: background 0.2s;
+}
+
+/* Topico Ativo */
+
+.topic.active {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    height: 27vh;
+}
+
+.topic.active .titleMoreIcon {
+    transform: rotate(180deg);
+}
+.topic.active .lastNewsOfTopic {
+    display: block;
+    list-style-type: none;
+    height: 100%;
+}
+
+.topic.active .lastNews {
+    margin-left: 2em;
+    text-transform: uppercase;
+    font-weight: 500;
+}
+
+.topic.active .lastNews:not(:last-child){
+    border-top: 1px solid #d2dae2;
+}
+.topic.active .lastNews:last-child{
+    border-top: 1px solid #d2dae2;
+    border-bottom: 1px solid #d2dae2;
+}
+
+.topic.active .lastNews::before  {
+  content: "■";
+  color: #ffa801;
+  font-weight: bolder;
+  font-size: 32px;
+  margin-right: .5em;
+}
