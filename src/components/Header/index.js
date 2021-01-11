@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import Logo from "../../assets/brasao-estado-ce.png"
+import Logo from "../../assets/brasao-estado-nome-escola.png"
 import { VscSearch as SearchIcon } from 'react-icons/vsc'
 import './index.css';
 
