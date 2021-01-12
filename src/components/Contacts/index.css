@@ -1,0 +1,71 @@
+.contacts {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+    width: 80%;
+    justify-items: center;
+}
+
+.contacts a {
+    position: absolute;
+    text-decoration: none;
+    color: #333;
+    transform: translateX(-100%);
+}
+
+.contacts span {
+    display: flex;
+    align-items: center;
+    position: relative;
+    height: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.contactsInstagram, 
+.contactsFacebook, 
+.contactsPhone {
+    display: flex;
+    align-items: center;
+    height: 8vh;
+    width: 15%;
+}
+
+.contacts .mediaIcon {
+    font-size: 42px;
+    color: #1e272e;
+    height: 100%;
+    margin-right: 5px;
+}
+
+.contactsInstagram:hover, 
+.contactsFacebook:hover, 
+.contactsPhone:hover {
+    width: 90%;
+    transition: width 0.8s ease;
+}
+
+.contactsInstagram:hover span, 
+.contactsFacebook:hover span, 
+.contactsPhone:hover span {
+    display: flex;
+    width: 90%;
+    transition: width 0.5s ease;
+}
+
+.contactsInstagram:hover a, 
+.contactsFacebook:hover a, 
+.contactsPhone:hover a {
+    transform: translateY(0);
+    transition: transform 0.7s ease;
+} 
+
+.contactsFacebook:hover .mediaIcon {
+    color: #575fcf;
+    transition: color 0.5s ease;
+}
+
+.contactsInstagram:hover .mediaIcon {
+    color: #ff6b81;
+    transition: color 0.5s ease;
+}
