@@ -1,18 +1,20 @@
 import {
-  BrowserRouter as Router,
+  BrowserRouter,
   Switch,
   Route
 } from 'react-router-dom';
 import HomePage from './pages/HomePage';
+import AboutPage from './pages/AboutPage';
 import './globals.css';
 
 function App() {
   return (
-    <Router>
+    <BrowserRouter>
       <Switch>
-        <Route exact src="/" component={HomePage}/>
+        <Route exact path="/" component={HomePage}/>
+        <Route exact path="/sobre" component={AboutPage}/>
       </Switch>
-    </Router>
+    </BrowserRouter>
   );
 }
 
