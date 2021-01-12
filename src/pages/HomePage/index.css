@@ -1,0 +1,13 @@
+.homeContent {
+    overflow-y: scroll;
+}
+
+.homeContent::-webkit-scrollbar {
+    width: 0.5em;
+}
+.homeContent::-webkit-scrollbar-track {
+    background-color: #d2dae2;
+}
+.homeContent::-webkit-scrollbar-thumb {
+    background-color: #808e9b;
+}
