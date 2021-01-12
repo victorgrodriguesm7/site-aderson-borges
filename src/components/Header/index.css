@@ -1,11 +1,13 @@
 .header {
     display: flex;
     flex-direction: row;
-    height: 15vh;
+    height: 10vh;
+    min-width: 458px;
     width: 100vw;
     background-color: var(--green);
     justify-content: space-between;
     align-items: flex-end;
+    font-family: 'Barlow',sans-serif;
 }
 
 .header .headerLogo {
@@ -14,41 +16,77 @@
 
 .header .navMenu {
     display: flex;
-    justify-content: space-evenly;
-    width: 40%;
-    color: white;
-    margin-bottom: 10px;
+    justify-content: flex-end;
+    align-items: flex-end;
+    width: 25%;
+    height: 100%;
+    margin: 10px;
+    transition: width 0.3s ease;
 }
 
+.header .navMenu .selected .navOption{
+    font-weight: 500;
+}
+
+.header .navOption {
+    text-decoration: none;
+    color: white;
+    font-weight: 100;
+    text-transform: uppercase;
+}
+
+.header .navMenu hr {
+    height: 28%;
+    border: none;
+    width: 1px;
+    background: white;
+    margin: 0 7%;
+}
+
+.header .navMenu .selected + hr {
+    width: 3px;
+}
 .header .navMenu .search {
+    position: relative;
     display: flex;
     align-items: center;
     justify-content: space-between;
+    overflow: hidden;
 }
 
 .header .navMenu .searchInput {
+    position: absolute;
     outline: 0;
     border: 0;
-    width: 0;
     height: 80%;
+    right: 0;
+    transform: translateX(100%);
     border-radius: 13px;
     padding-left: 5px;
-    display: none;
+    z-index: 0;
+    transition: width 0.4s;
 }
 
-.header .navMenu .searchInput.active {
-    animation: search-input-animation 0.5s forwards ease;
-    display: block;
+.header .navMenu.active {
+    width: 40%;
+}
+.header .navMenu.active .search {
+    width: 45%;
 }
 
+.header .navMenu.active .searchInput {
+    width: 80%;
+    transform: translateX(-25%);
+    display: flex;
+    transition: transform 0.3s;
+}
+
+.header .navMenu.active .searchIcon {
+    margin-left: auto;
+    z-index: 1;
+    overflow: hidden;
+}
 .header .navMenu .searchIcon {
+    color: white;
     font-size: 32px;
-}
-
-@keyframes search-input-animation {
-    from {
-        width: 0;
-    }to {
-        width: 80%;
-    }
 }
