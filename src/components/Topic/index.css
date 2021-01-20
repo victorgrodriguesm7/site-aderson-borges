@@ -38,6 +38,11 @@
     display: none;
 }
 
+.topic .lastNewsOfTopic a{
+    text-decoration: none;
+    color: #333;
+}
+
 /* animações */
 
 .topic:hover .titleLine {
