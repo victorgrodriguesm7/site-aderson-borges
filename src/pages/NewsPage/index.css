@@ -1,0 +1,43 @@
+.articleContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 87%;
+    padding-bottom: 1%;
+    width: 100%;
+    font-family: 'Barlow', sans-serif;
+    overflow-y: scroll;
+}
+
+.articleContainer::-webkit-scrollbar {
+    width: 0.5em;
+}
+.articleContainer::-webkit-scrollbar-track {
+    background-color: #d2dae2;
+}
+.articleContainer::-webkit-scrollbar-thumb {
+    background-color: #808e9b;
+}
+
+.articleContainer h1:first-child {
+    margin-top: 3%;
+    margin-bottom: 2%;
+}
+.articleContainer * {
+    width: 90%;
+}
+
+.articleContainer p {
+    text-indent: 2.5%;
+}
+
+.articleContainer p a {
+    text-decoration: none;
+    color: blue;
+    text-transform: uppercase;
+}
+
+.articleContainer img {
+    width: 80% !important;
+    height: 80% !important;
+}
