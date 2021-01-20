@@ -1,36 +1,47 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { BsChevronDown } from 'react-icons/bs';
-
+import { Link } from 'react-router-dom';
+import app from '../../services/firebase';
 import './index.css';
+const topics = {
+    "Processo Seletivo": "Processo Seletivo",
+    "Feira Regional": "Feira Regional",
+    "Alunos Prêmios": "Alunos Premios"
+}
 
 const Topic = ({ type="Processo Seletivo"}) => {
     let [isActive, setIsActive] = useState(false);
+    let [isLoading, setIsLoading] = useState(true);
+    let [lastNews, setLastNews] = useState(null)
     let topicClass = "topic " + (isActive ? "active" : "");
 
-    function getLastNews(){
-        return ([
-            {
-                title: "Resultados 2021",
-                link: "/resultados-2021"
-            },
-            {
-                title: "Lista de Classificados 2021",
-                link: "/lista-de-classificados-2021"
-            },
-            {
-                title: "Período de Inscrição 2021",
-                link: "/periodo-de-inscrição-2021"
-            },
-            {
-                title: "Edital 2021",
-                link: "/edital-2021"
-            },
-        ]);        
+    async function getLastNews(){
+        let docs = (await app.firestore().collection('articles').get()).docs;
+        let lastNews = [];
+        for (let doc of docs){
+            let id = doc.id;
+            let { title, topic } = doc.data();
+            if (topics[type] !== topic)
+                continue
+            lastNews.push({
+                title,
+                id
+            })
+        }
+
+        return lastNews;
     }
     
     function handleTopicClick(){
         setIsActive(!isActive);
     }
+
+    useEffect(() => {
+        getLastNews().then(lastNews => {
+            setLastNews(lastNews);
+            setIsLoading(false);
+        })
+    }, [])
 
     return (
         <div className={topicClass}>
@@ -41,12 +52,12 @@ const Topic = ({ type="Processo Seletivo"}) => {
             </div>
             <ul className="lastNewsOfTopic">
                 {
-                    getLastNews().map(news => {
+                    (isLoading) ? null : lastNews.map((news) => {
                         return (
                             <li className="lastNews">
-                                {news.title}
+                                <Link to={`/noticia?article=${news.id}`}>{news.title}</Link>
                             </li>
-                        )
+                        );
                     })
                 }
             </ul>
