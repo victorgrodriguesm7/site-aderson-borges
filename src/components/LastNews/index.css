@@ -10,6 +10,10 @@
     font-family: 'Barlow', sans-serif;
 }
 
+.newsContainer {
+    cursor: pointer;
+}
+
 .loadingImage, .newsImage {
     background: #808e9b;
     width: 40%;
