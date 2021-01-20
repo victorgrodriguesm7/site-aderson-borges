@@ -1,5 +1,6 @@
 .homeContent {
-    overflow-y: scroll;
+    overflow-y: auto;
+    height: 89vh;
 }
 
 .homeContent::-webkit-scrollbar {
